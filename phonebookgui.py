@@ -60,7 +60,7 @@ class PhoneBookGUI(PhoneBook):
             self.phonebook_.phone_add_upd(self.phone_name, self.phone_number)
             self.print_help()
         else:
-            if input("Sorry no such Name \n Whant to add? (Yes = \"y\")") == 'y':
+            if input("Sorry no such Name \n Want to add? (Yes = \"y\")") == 'y':
                 self.get_phone_number()
                 self.phonebook_.phone_add_upd(self.phone_name, self.phone_number)
                 self.print_help()
