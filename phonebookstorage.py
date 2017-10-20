@@ -1,6 +1,7 @@
 import json
 import csv
 import os.path
+import configparser
 
 class PhoneBookStorage():
     data = dict()
@@ -30,7 +31,11 @@ class PhoneBookStorage():
                 for row in reader:
                     self.data[row[0]]=row[1]
 
-    def __init__(self, type_='json'):
+    def __init__(self):
+        config = configparser.ConfigParser()
+        config.read('config.ini')
+        type_ = config['GLOBAL']['storage_engine']
+        del config
         if type_ == 'csv':
             self.current_type = 'cvs'
             self.save = self.save_csv

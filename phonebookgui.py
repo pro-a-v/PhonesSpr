@@ -1,12 +1,12 @@
 from phonebook import PhoneBook
 
 
-class PhoneBookGUI(PhoneBook):
+class PhoneBookGUI():
     phone_name = None
     phone_number = None
 
-    def __init__(self, PhoneBook_):
-        self.phonebook_ = PhoneBook_
+    def __init__(self):
+        self.phonebook_ = PhoneBook()
         self.operations = {'a': self.phone_add,
                            'd': self.phone_del,
                            'u': self.phone_upd,

@@ -1,9 +1,10 @@
 from phonebookstorage import PhoneBookStorage
 
 
-class PhoneBook(PhoneBookStorage):
-    def __init__(self, storage_):
-        self.my_storage = storage_
+class PhoneBook():
+
+    def __init__(self):
+        self.my_storage = PhoneBookStorage()
 
     def phone_add_upd(self, phone_name, phone_number):
         self.my_storage.data[phone_name] = phone_number
