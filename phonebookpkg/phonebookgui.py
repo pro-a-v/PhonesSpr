@@ -1,4 +1,4 @@
-from phonebook import PhoneBook
+from . import phonebook
 
 
 class PhoneBookGUI():
@@ -6,7 +6,7 @@ class PhoneBookGUI():
     phone_number = None
 
     def __init__(self):
-        self.phonebook_ = PhoneBook()
+        self.phonebook_ = phonebook.PhoneBook()
         self.operations = {'a': self.phone_add,
                            'd': self.phone_del,
                            'u': self.phone_upd,

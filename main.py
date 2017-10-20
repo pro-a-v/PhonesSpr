@@ -1,12 +1,6 @@
-
-
-from phonebook import PhoneBook
-from phonebookstorage import PhoneBookStorage
-from phonebookgui import PhoneBookGUI
-
+from phonebookpkg.phonebookgui import *
 
 if __name__ == "__main__":
-    #PhoneBook_ = PhoneBook()
     PhoneBookGUI_ = PhoneBookGUI()
 
     while True:

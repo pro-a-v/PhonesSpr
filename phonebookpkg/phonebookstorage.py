@@ -43,4 +43,3 @@ class PhoneBookStorage():
         else:
             self.save = self.save_json
             self.load_json()
-
