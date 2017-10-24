@@ -1,9 +1,8 @@
 import json
 import os.path
+from phonebookpkg.phonebook_engine_any import PhoneBookStorageEngineVirt
 
-
-
-class PhoneBookStorageEngine():
+class PhoneBookStorageEngine(PhoneBookStorageEngineVirt):
     data = dict()
     current_type = 'json'
 
