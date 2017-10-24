@@ -1,7 +1,7 @@
-from phonebookpkg.phonebookgui import *
+import phonebookpkg
 
 if __name__ == "__main__":
-    PhoneBookGUI_ = PhoneBookGUI()
+    PhoneBookGUI_ = phonebookpkg.PhoneBookGUI()
 
     while True:
         PhoneBookGUI_.get_operation()

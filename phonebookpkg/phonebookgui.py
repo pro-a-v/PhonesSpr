@@ -1,3 +1,5 @@
+__all__ = ['PhoneBookGUI']
+
 from . import phonebook
 
 
@@ -14,7 +16,8 @@ class PhoneBookGUI():
                            'q': self.phones_exit}
         self.print_help()
 
-    def print_help(self):
+    @staticmethod
+    def print_help():
         print("""
         операция: 
         \t \"a\" to add 
@@ -52,7 +55,6 @@ class PhoneBookGUI():
                 self.phonebook_.phone_add_upd(self.phone_name, self.phone_number)
                 self.print_help()
 
-
     def phone_upd(self):
         self.get_phone_name()
         if self.phonebook_.phone_exist(self.phone_name):
@@ -76,5 +78,6 @@ class PhoneBookGUI():
     def get_phone_number(self):
         self.phone_number = input("Enter Contact Phone Number")
 
-    def phones_exit(self):
+    @staticmethod
+    def phones_exit():
         exit(0)

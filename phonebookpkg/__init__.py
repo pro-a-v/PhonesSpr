@@ -1,2 +1,3 @@
+from .phonebookgui import *
 
-__all__ = 'PhoneBookGUI'
+
