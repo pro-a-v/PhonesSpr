@@ -23,18 +23,21 @@ class DictMixer(dict):
 
     def __getitem__(self, item):
         return conn.execute(text('select phone from students where name like :name'), {'name': item}).fetchone()[0]
-    def __setitem__(self, k, v):
-        return super(DictMixer, self).__setitem__(k, v)
-    def __delitem__(self, k):
-        return super(DictMixer, self).__delitem__(k)
+    def __setitem__(self, key, value):
+        result = conn.execute(text('select 1 from students where name like :key'), {'key': key}).fetchone()
+        if result is not None:
+            conn.execute(text('update students set phone = :value where name like :key'),{'key': key, 'value': value})
+        else:
+            conn.execute(text('insert into students (name,phone) values(:key , :value)'),{'key': key, 'value': value})
+    def __delitem__(self, item):
+        conn.execute(text('delete from students where name like :name'), {'name': item})
     def __contains__(self, item):
         result = conn.execute(text('select 1 from students where name like :name'), {'name': item}).fetchone()
-        if result[0] == 1:
+        if result is not None:
             return True
         else:
             return False
-    def update(self, mapping=(), **kwargs):
-        super(DictMixer, self).update(self._process_args(mapping, **kwargs))
+
 
 
 
