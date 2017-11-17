@@ -9,15 +9,18 @@ class DictMixer(dict):
         super(DictMixer, self).__init__(*arg, **kw)
 
     def __getitem__(self, item):
-        result = m.test.phone.find({'name':item})
-        return result
+        result = m.test.phone.find_one({'name':item})
+        if result:
+            return result['phone']
+        else:
+            return None
     def __setitem__(self, key, value):
         m.test.phone.insert_one({'name': key, 'phone': value})
     def __delitem__(self, item):
         m.test.phone.delete_one({'name': item})
     def __contains__(self, item):
         result = m.test.phone.find_one({'name':item})
-        if result is not None:
+        if result:
             return True
         else:
             return False

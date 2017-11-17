@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% block content %}
+    <h1>Operation Search</h1>
+    <form method="post">
+        <input type="text" name="name" value="{{name}}" placeholder="Name">
+        <p style="color:red">{{phone_error}}</p>
+        <br/><br/>
+        <input type="submit" >
+    </form>
+
+
+
+{% endblock %}
