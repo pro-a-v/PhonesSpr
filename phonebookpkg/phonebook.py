@@ -20,6 +20,6 @@ class PhoneBook():
             return False
 
     def phone_del(self, phone_name=None):
-        if phone_name in self.storage_.phones:
+        if phone_name in self.my_storage.engine.data:
             del self.my_storage.engine.data[phone_name]
             self.my_storage.engine.save()

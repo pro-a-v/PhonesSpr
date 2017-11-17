@@ -22,7 +22,6 @@ class Wrapper():
     def print_network(self, text):
             self.c.sendall(text.encode("utf8"))
 
-
     def __getattr__(self,attr):
             return self.wrapped_class.__getattribute__(attr)
 

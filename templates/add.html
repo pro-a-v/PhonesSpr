@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block content %}
+    <h1>Operation Add</h1>
+    <form method="post">
+        <input type="text" name="name" value="{{name}}" placeholder="Name">
+        <br/><br/>
+        <input type="text" name="phone" value="{{phone}}" placeholder="Phone">
+        <p style="color:red">{{phone_error}}</p>
+        <br/><br/>
+        <input type="submit" >
+    </form>
+
+
+
+{% endblock %}
